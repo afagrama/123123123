@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.plivo</field>
+        <field name="model">res.config.settings</field>
+         <field name="priority" eval="60"/>
+        <field name="inherit_id" ref="project.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+        	 <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div class="app_settings_block" data-string="Plivo Settings" string="Plivo Settings" data-key="plivo_odoo">
+                    <h2>PLIVO</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <label string="User Name"/>
+                                <div class="text-muted">
+                                    Auth Id for Plivo
+                                </div>
+                                <div class="text-muted">
+                                    <field name="auth_id"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <label string="Password"/>
+                                <div class="text-muted">
+                                    Auth Token for Plivo
+                                </div>
+                                <div class="text-muted">
+                                    <field name="auth_token"/>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                        
+                    
+                </div>
+            </xpath>
+        </field>
+    </record>
+    <!-- <record id="project_plivo_settings" model="ir.ui.view">
+        <field name="name">project.view.form.inherit.plivo</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project" />
+            <field name="arch" type="xml">
+                <field name="partner_id" position="after">
+                    <field name="auth_id" groups="project.group_project_manager"/>
+                    <field name="auth_token" groups="project.group_project_manager"/>
+                </field>
+            </field>
+    </record>
+ -->
+   
+</odoo>
